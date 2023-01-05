@@ -17,4 +17,8 @@ export class PostsComponent {
   ngOnInit() {
     this.mensajes = this.dataService.getPosts();
   }
+
+  escuchaClick( id:number ) {
+    console.log('Click en :', id);
+  }
 }

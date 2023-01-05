@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-post',
@@ -9,4 +9,9 @@ export class PostComponent {
 
   @Input() mensaje: any;
 
+  @Output() clickPost = new EventEmitter<number>();
+
+  onClick() {
+    this.clickPost.emit(this.mensaje.id);
+  }
 }
